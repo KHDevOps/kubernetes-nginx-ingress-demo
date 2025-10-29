@@ -17,6 +17,9 @@ spec:
       containers:
       - name: controller
         image: registry.k8s.io/ingress-nginx/controller:v1.9.4
+        args:
+          - /nginx-ingress-controller
+          - --ingress-class=nginx
         env:
         - name: POD_NAME
           valueFrom:
